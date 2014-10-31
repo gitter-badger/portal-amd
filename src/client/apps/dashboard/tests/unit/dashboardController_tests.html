@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Controller Test</title>
+    <meta name="description" content="guide: unit-testing-basics-1"/>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="/bower_components/jasmine/dist/images/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="/bower_components/jasmine/lib/jasmine-core/jasmine.css">
+    <script type="text/javascript" src="/bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script type="text/javascript" src="/bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <script type="text/javascript" src="/bower_components/jasmine/lib/jasmine-core/boot.js"></script>
+
+    <script src="/bower_components/requirejs/require.js"></script>
+</head>
+<body>
+
+<script>
+    require.config({
+        "shim": {
+            "ember": {
+                "deps": ["handlebars", "jquery"],
+                "exports": "Ember"
+            }
+        },
+        paths: {
+            'handlebars': '/bower_components/handlebars/handlebars.min',
+            'jquery': '/bower_components/jquery/dist/jquery.min',
+            'ember': '/bower_components/ember/ember',
+
+            'jasmine': '/bower_components/jasmine/lib/jasmine-core/jasmine-html',
+            'boot': '/bower_components/jasmine/lib/jasmine-core/boot',
+            'src/client/apps/dashboard/controllers/DashboardController':'/src/client/apps/dashboard/controllers/DashboardController',
+            'dashboardController_Test': 'dashboardController_test'
+        }
+    });
+
+    require(['jquery', 'ember', 'jasmine', 'require', 'boot', 'dashboardController_Test'], function ($, ember, jasmine, require) {
+
+        /*=================== APP ====================*/
+
+        App = Ember.Application.create();
+
+        App.SomeThing = Ember.Object.extend({
+            foo: 'bar',
+            computedFoo: function () {
+                return 'computed ' + this.get('foo');
+            }.property('foo')
+        });
+
+        /*=================== TESTS ====================*/
+
+        App.setupForTesting();
+        App.rootElement = '#ember-testing';
+    });
+</script>
+
+<div id="mocha"></div>
+<div id="ember-testing"></div>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+version=0.0.42
+deployTo=ec2-54-165-179-238.compute-1.amazonaws.com
+

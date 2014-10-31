@@ -1,0 +1,11 @@
+{
+  "name": "paycor portal",
+  "dependencies": {
+    "ember": "~1.8.0",
+    "requirejs": "~2.1.15",
+    "requirejs-text": "~2.0.12"
+  },
+  "devDependencies": {
+    "jasmine": "~2.0.4"
+  }
+}
