@@ -1,4 +1,5 @@
 # Portal
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/samdelagarza/portal-amd?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ### Commands:
 
